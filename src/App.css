@@ -1,38 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 1.5rem; 
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.add-form-container {
+  background: #fff;
+  color: #282c34;
+  padding: 1.5rem;
+  min-width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  width: 400px;
+}
+
+.add-form-container input {
+  padding: .7rem;
+  min-width: 350px;
+  width: 100%;
+  outline: 0;
+  box-shadow: 0 0 3px #282c34;
+  border-radius: 5px;
+}
+
+.add-form-container label {
+  font-size: 1.5rem;
+  letter-spacing: .5px;
+}
+
+button {
+  padding: .7rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  border: none;
+  background: #282c34;
+  color: #ccc;
+  border-radius: 5px;
+}
+
+.employee-card {
+  color: #282c34;
+  background-color: #fff;
+  width: 450px;
+  border-radius: 10px 2px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.employee-card header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.employee-details p {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-weight: 200;
+  line-height: 2rem;
+}
+
+.employee-details img {
+  width: 1em;
+  height: 1em;
+}
+
+.btns-container img {
+  width: 1.4em;
+  height: 1.4em;
+  margin-left: 10px;
 }

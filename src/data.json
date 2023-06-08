@@ -1,0 +1,35 @@
+{
+    "admin": {
+        "username": "admin",
+        "password": "admin"
+    },
+    "employees": [
+        {
+            "name": "Nicholas",
+            "surname": "Rabalao",
+            "email": "nicho@gmail.com",
+            "id": "00020087650981",
+            "position": "Web Developer",
+            "phone": "0987654321",
+            "image": ""
+        },
+        {
+            "name": "Doctor",
+            "surname": "Khumalo",
+            "email": "doctor@gamail.com",
+            "id": "00000387650981",
+            "position": "Automation Engineer",
+            "phone": "0987654321",
+            "image": ""
+        },
+        {
+            "name": "Victor",
+            "surname": "Davis",
+            "email": "victor@gamail.com",
+            "id": "00200087650981",
+            "position": "Software Developer",
+            "phone": "0987654321",
+            "image": ""
+        }
+    ]
+}
