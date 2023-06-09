@@ -5,7 +5,8 @@
 }
 
 .App {
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-color: #ccc;
   min-height: 100vh;
   display: flex;
   gap: 1.5rem; 
