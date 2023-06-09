@@ -9,6 +9,7 @@
   min-height: 100vh;
   display: flex;
   gap: 1.5rem; 
+  flex-wrap: wrap;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
