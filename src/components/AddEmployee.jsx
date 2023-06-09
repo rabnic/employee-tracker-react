@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React  from 'react';
 
 import AddEmployeeForm from './AddEmployeeForm';
 
-const AddEmployee = ({addEmployeeHandler}) => {
+const AddEmployee = ({addEmployeeHandler, editEmployee}) => {
     return (
         <section className='add-form-container'>
-            <AddEmployeeForm add={addEmployeeHandler}/>
+            <AddEmployeeForm add={addEmployeeHandler} editEmployee={editEmployee} />
         </section>
     )
 };

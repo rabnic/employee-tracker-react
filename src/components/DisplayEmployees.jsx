@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
-
 import EmployeeCard from './EmployeeCard';
 
-const DisplayEmployees = ({employees, delEmployee, toEdit}) => {
-    console.log('Display emps--- ', employees)
+const DisplayEmployees = ({employees, delEmployee, setCurrentEmployeeEdit}) => {
+    // console.log('Display emps--- ', employees)
     return (
         <section>
             {
                 employees.map(employee => {
-                    return <EmployeeCard key={employee.id} employee={{employee}} delEmployee={delEmployee} toEdit={toEdit}/>
+                    return <EmployeeCard key={employee.key} employee={{employee}} delEmployee={delEmployee} setCurrentEmployeeEdit={setCurrentEmployeeEdit}/>
                 })
             }
             
