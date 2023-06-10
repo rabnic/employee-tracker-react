@@ -8,17 +8,6 @@ function App() {
   const [employees, setEmployees] = useState();
   const [currentEmployeeEdit, setCurrentEmployeeEdit] = useState(0);
 
-  const addEmployeeHandler = (employee) => {
-    let key = 1;
-    let length = employees.length;
-    if ( length > 0) {
-      key = employees[length-1].key + 1;
-    }
-    employee.key = key;
-    setEmployees([...employees, employee]);
-    console.log(employees);
-  }
-
   useEffect(() => {
     let storedData = localStorage.getItem('employeeDB') || [];
     if ((typeof storedData) == 'object') {
@@ -32,6 +21,17 @@ function App() {
   useEffect(() => {
     employees && localStorage.setItem('employeeDB', JSON.stringify(employees));
   }, [employees])
+
+  const addEmployeeHandler = (employee) => {
+    let key = 1;
+    let length = employees.length;
+    if (length > 0) {
+      key = employees[length - 1].key + 1;
+    }
+    employee.key = key;
+    setEmployees([...employees, employee]);
+    console.log(employees);
+  };
 
   const editEmployee = (employee) => {
 
@@ -55,14 +55,14 @@ function App() {
       }))
   }
 
-  const deleteEmployeeHandler = (employeeId) => {
-    setEmployees(employees.filter(emp => emp.key !== employeeId));
+  const deleteEmployeeHandler = (employeeKey) => {
+    setEmployees(employees.filter(emp => emp.key !== employeeKey));
   }
 
   return (
     <div className="App">
       <AddEmployee addEmployeeHandler={addEmployeeHandler} editEmployee={editEmployee}/>
-      {employees && <DisplayEmployees employees={employees} delEmployee={deleteEmployeeHandler}  setCurrentEmployeeEdit={setCurrentEmployeeEdit}/>}
+      {employees && <DisplayEmployees employees={employees} delEmployee={deleteEmployeeHandler} setCurrentEmployeeEdit={setCurrentEmployeeEdit}/>}
     </div>
   );
 }

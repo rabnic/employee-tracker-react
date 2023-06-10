@@ -10,6 +10,8 @@ const populateFormForEdit = ({employee}) => {
         const attr = elem.attributes.name.value;
         elem.value = employee[attr];
     })
+    document.getElementById('addBtn').style.display = 'none';
+    document.getElementById('editBtn').style.display = 'block';
 }
 
 const EmployeeCard = ({employee, delEmployee, setCurrentEmployeeEdit}) => {

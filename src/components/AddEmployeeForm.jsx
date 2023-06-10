@@ -28,6 +28,8 @@ const AddEmployeeForm = ({ add, editEmployee }) => {
         e.preventDefault();
         editEmployee(employee)
         clearFields();
+        document.getElementById('addBtn').style.display = 'block';
+        document.getElementById('editBtn').style.display = 'none';
     }
 
     const handleInputChange = (event) => {
@@ -36,7 +38,7 @@ const AddEmployeeForm = ({ add, editEmployee }) => {
     }
 
     return (
-        <form>
+        <form onSubmit={addEmp}>
             <h3 className='form-title'>Add Employee</h3>
             <label>Name</label>
             <input type='text' name='name' placeholder='John' required onChange={handleInputChange} />
@@ -51,7 +53,7 @@ const AddEmployeeForm = ({ add, editEmployee }) => {
             <label>Phone Number</label>
             <input type='tel' name='phone' placeholder='0831234567' required onChange={handleInputChange} />
             <input hidden id='empKey' name='key' />
-            <button type="submit" id="addBtn" onClick={addEmp}>Add</button>
+            <button type="submit" id="addBtn" >Add</button>
             <button id="editBtn" onClick={editEmp}>Edit</button>
         </form>
     )

@@ -5,8 +5,7 @@
 }
 
 .App {
-  /* background-color: #282c34; */
-  background-color: #ccc;
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   gap: 1.5rem; 
@@ -45,6 +44,10 @@
 .add-form-container label {
   font-size: 1.5rem;
   letter-spacing: .5px;
+}
+
+#editBtn {
+  display: none;
 }
 
 button {
