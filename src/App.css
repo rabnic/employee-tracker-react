@@ -58,6 +58,10 @@
   letter-spacing: .5px;
 }
 
+#editBtn {
+  display: none;
+}
+
 button {
   padding: .7rem;
   letter-spacing: 1.5px;
