@@ -31,7 +31,7 @@ const DisplayEmployees = ({ employees, delEmployee, setCurrentEmployeeEdit }) =>
     }
 
     return (
-        <section>
+        <section className='display-container'>
             <h2>Display Employees</h2>
             {
                 employees.length > 0 &&

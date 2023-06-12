@@ -56,7 +56,7 @@ const AddEmployeeForm = ({ add, editEmployee }) => {
             <input type='text' name='position' placeholder='Web Developer' required onChange={handleInputChange} />
             <label>Phone Number</label>
             <input type='tel' name='phone' placeholder='0831234567' required onChange={handleInputChange} />
-            <label htmlFor="myfile">Select a file:</label>
+            <label htmlFor="myfile">Select Picture:</label>
             <input type="file" id="myfile" name="image" required onChange={handleInputChange}/>
 
             <input hidden id='empKey' name='key' />
