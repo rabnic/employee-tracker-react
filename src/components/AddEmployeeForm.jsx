@@ -33,12 +33,16 @@ const AddEmployeeForm = ({ add, editEmployee }) => {
     }
 
     const handleInputChange = (event) => {
-        const { name, value } = event.target;
+        let { name, value } = event.target;
+        if (event.target.type === 'file') {
+            // value = event.target.files[0].path; 
+            value = URL.createObjectURL(event.target.files[0]);
+        }
         setEmployee({ ...employee, [name]: value })
     }
 
     return (
-        <form onSubmit={addEmp}>
+        <form onSubmit={addEmp} id='add-form'>
             <h3 className='form-title'>Add Employee</h3>
             <label>Name</label>
             <input type='text' name='name' placeholder='John' required onChange={handleInputChange} />
@@ -52,7 +56,11 @@ const AddEmployeeForm = ({ add, editEmployee }) => {
             <input type='text' name='position' placeholder='Web Developer' required onChange={handleInputChange} />
             <label>Phone Number</label>
             <input type='tel' name='phone' placeholder='0831234567' required onChange={handleInputChange} />
+            <label htmlFor="myfile">Select a file:</label>
+            <input type="file" id="myfile" name="image" required onChange={handleInputChange}/>
+
             <input hidden id='empKey' name='key' />
+
             <button type="submit" id="addBtn" >Add</button>
             <button id="editBtn" onClick={editEmp}>Edit</button>
         </form>

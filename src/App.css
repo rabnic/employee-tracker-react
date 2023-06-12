@@ -15,11 +15,20 @@
   padding: 1rem;
 }
 
+@media screen and (max-width: 1200px){
+  .App {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
 .add-form-container {
   background: #fff;
   color: #282c34;
   padding: 1.5rem;
   min-width: fit-content;
+  width: fit-content;
   height: fit-content;
   border-radius: 10px;
 }
@@ -28,12 +37,13 @@
   display: flex;
   flex-direction: column;
   gap: .5rem;
-  width: 400px;
+  width: 500px;
 }
 
 .add-form-container input, #search-input {
   padding: .7rem;
   min-width: 350px;
+  width: fit-content;
   width: 100%;
   outline: 0;
   box-shadow: 0 0 3px #282c34;
@@ -50,7 +60,10 @@
 
 .search-container {
   display: flex;
-  margin: .6rem auto;
+  margin-bottom: .6rem;
+  margin-top: .6rem;
+  justify-content: flex-start;
+  max-width: 550px;
 }
 
 .add-form-container label {
@@ -75,16 +88,35 @@ button {
 .employee-card {
   color: #282c34;
   background-color: #fff;
-  width: 450px;
+  width: 550px;
   border-radius: 10px 2px;
   padding: 1rem;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .employee-card header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+}
+
+.employee-card span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  font-size: .7rem;
+}
+
+.user-image {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  box-shadow: 0 0 1px #000;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
 }
 
 .employee-details p {

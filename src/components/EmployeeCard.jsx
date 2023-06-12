@@ -4,9 +4,10 @@ import phoneIcon from '../icons/phone.png';
 import emailIcon from '../icons/email.png';
 import deleteIcon from '../icons/bin.png';
 import editIcon from '../icons/edit.png';
+import defaultUserImage from '../icons/photographer.png';
 
 const populateFormForEdit = ({employee}) => {
-    Array.from(document.getElementsByTagName('input')).forEach(elem => {
+    Array.from(document.querySelectorAll('#add-form input')).forEach(elem => {
         const attr = elem.attributes.name.value;
         elem.value = employee[attr];
     })
@@ -15,7 +16,7 @@ const populateFormForEdit = ({employee}) => {
 }
 
 const EmployeeCard = ({employee, delEmployee, setCurrentEmployeeEdit}) => {
-    const {name, surname, id, email, position, phone, key} = employee.employee;
+    const {name, surname, id, email, position, phone, key, image} = employee.employee;
     return (
         <div className="employee-card">
             <header>
@@ -31,6 +32,10 @@ const EmployeeCard = ({employee, delEmployee, setCurrentEmployeeEdit}) => {
                 <p><img src={jobIcon} alt="Job position / Chair-"/>{position}</p>
                 <p><img src={phoneIcon} alt="Phone-"/>{phone}</p>
             </div>
+            <span>
+                <img src={image || defaultUserImage} width='100px' height='100px' alt={`${name} ${surname}  picture_`} className='user-image'/>    
+            </span>
+
         </div>
     )
 }
