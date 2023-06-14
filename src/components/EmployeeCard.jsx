@@ -9,7 +9,11 @@ import defaultUserImage from '../icons/photographer.png';
 const populateFormForEdit = ({employee}) => {
     Array.from(document.querySelectorAll('#add-form input')).forEach(elem => {
         const attr = elem.attributes.name.value;
-        elem.value = employee[attr];
+        
+        if (elem.id !== 'myfile') {
+            console.log(elem.id)
+            elem.value = employee[attr];
+        }
     })
     document.getElementById('addBtn').style.display = 'none';
     document.getElementById('editBtn').style.display = 'block';

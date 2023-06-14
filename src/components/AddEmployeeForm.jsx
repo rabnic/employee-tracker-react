@@ -36,7 +36,17 @@ const AddEmployeeForm = ({ add, editEmployee }) => {
         let { name, value } = event.target;
         if (event.target.type === 'file') {
             // value = event.target.files[0].path; 
-            value = URL.createObjectURL(event.target.files[0]);
+            // value = URL.createObjectURL(event.target.files[0]);
+            const reader = new FileReader();
+
+            reader.addEventListener('load', () => {
+                console.log(reader.result)
+                value = reader.result
+                setEmployee({ ...employee, [name]: value })
+            })
+
+            reader.readAsDataURL(event.target.files[0])
+            return;
         }
         setEmployee({ ...employee, [name]: value })
     }
